@@ -1,6 +1,6 @@
 import Fastify from "fastify";
 import cors from "@fastify/cors";
-import Routes from "./src/routes/index.js";
+import Routes from "./routes/index.js";
 
 const app = Fastify({ logger: true, bodyLimit: 100 * 1024 * 1024 * 1024 });
 
