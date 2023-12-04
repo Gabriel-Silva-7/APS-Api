@@ -8,14 +8,19 @@ app.register(cors, {
   origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
   credentials: true,
-  allowedHeaders: ["Origin, X-Requested-With, "],
+  allowedHeaders: [
+    "Origin",
+    "X-Requested-With",
+    "Content-Type",
+    "Authorization",
+  ],
 });
 
 app.register(Routes);
 
 const start = async () => {
   try {
-    await app.listen({ port: 3001, host: "0.0.0.0" });
+    await app.listen({ port: 3001 });
   } catch (e) {
     app.log.error(e);
     process.exit(1);
