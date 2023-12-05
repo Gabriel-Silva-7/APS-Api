@@ -20,7 +20,7 @@ app.register(Routes);
 
 const start = async () => {
   try {
-    await app.listen({ port: 3001 });
+    await app.listen({ port: 3001, host: "0.0.0.0" });
   } catch (e) {
     app.log.error(e);
     process.exit(1);
